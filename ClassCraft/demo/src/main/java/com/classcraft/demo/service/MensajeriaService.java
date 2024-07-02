@@ -25,7 +25,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(mensajeRequest, headers);
 
         return restTemplate.exchange(
-                "http://localhost:8081/mensaje/enviar",
+                "http://localhost:8082/mensaje/enviar",
                 HttpMethod.POST,
                 entity,
                 MensajeResponse.class);
@@ -38,7 +38,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(headers);
 
         return restTemplate.exchange(
-                "http://localhost:8081/mensaje/ver/recibidos/"+id,
+                "http://localhost:8082/mensaje/ver/recibidos/"+id,
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference <List<MensajeResponse>>() {});
@@ -51,7 +51,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(headers);
 
         return restTemplate.exchange(
-                "http://localhost:8081/mensaje/ver/enviados/"+id,
+                "http://localhost:8082/mensaje/ver/enviados/"+id,
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference <List<MensajeResponse>>() {});
