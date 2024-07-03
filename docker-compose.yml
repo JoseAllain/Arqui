@@ -19,7 +19,7 @@ services:
       context: ./mensajeria
       dockerfile: Dockerfile
     ports:
-      - "8082:8081"
+      - "8082:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/classcraft
