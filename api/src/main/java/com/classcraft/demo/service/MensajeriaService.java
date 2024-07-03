@@ -3,6 +3,7 @@ package com.classcraft.demo.service;
 import com.classcraft.demo.view.MensajeRequest;
 import com.classcraft.demo.view.MensajeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,9 @@ import java.util.List;
 public class MensajeriaService {
     @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${url.ms}")
+    private String url;
 
     //private static final String ENVIAR_MENSAJE_URL = "http://localhost:8081/mensaje/enviar";// Cambia la URL según sea necesario
 
@@ -25,7 +29,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(mensajeRequest, headers);
 
         return restTemplate.exchange(
-                "http://localhost:8082/mensaje/enviar",
+                url+"/mensaje/enviar",
                 HttpMethod.POST,
                 entity,
                 MensajeResponse.class);
@@ -38,7 +42,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(headers);
 
         return restTemplate.exchange(
-                "http://localhost:8082/mensaje/ver/recibidos/"+id,
+                url+"/mensaje/ver/recibidos/"+id,
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference <List<MensajeResponse>>() {});
@@ -51,7 +55,7 @@ public class MensajeriaService {
         HttpEntity<MensajeRequest> entity = new HttpEntity<>(headers);
 
         return restTemplate.exchange(
-                "http://localhost:8082/mensaje/ver/enviados/"+id,
+                url+"/mensaje/ver/enviados/"+id,
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference <List<MensajeResponse>>() {});
