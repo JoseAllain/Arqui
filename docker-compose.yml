@@ -16,7 +16,7 @@ services:
   microservicio:
     container_name: microservicio
     build:
-      context: ./ClassCraft mensajes/demo/
+      context: ./mensajeria
       dockerfile: Dockerfile
     ports:
       - "8082:8081"
@@ -32,7 +32,7 @@ services:
   api:
     container_name: classcraft
     build:
-      context: ./ClassCraft/demo/
+      context: ./api
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
