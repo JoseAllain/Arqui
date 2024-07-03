@@ -13,10 +13,26 @@ services:
     ports:
       - "5433:5432"
 
+  microservicio:
+    container_name: microservicio
+    build:
+      context: ./ClassCraft mensajes/demo/
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/classcraft
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - db
+
   api:
     container_name: classcraft
     build:
-      context: .
+      context: ./ClassCraft/demo/
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
@@ -28,5 +44,6 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
       - db
+      - microservicio
 
 #este es nuestro proyecto
