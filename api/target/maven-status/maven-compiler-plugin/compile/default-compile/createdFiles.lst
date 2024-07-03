@@ -9,11 +9,13 @@ com\classcraft\demo\config\RestTemplateConfig.class
 com\classcraft\demo\model\Curso.class
 com\classcraft\demo\view\ModuloCursoResponse.class
 com\classcraft\demo\view\RegistroRequest.class
+com\classcraft\demo\view\UsuarioDTO.class
 com\classcraft\demo\model\ArchivoCS.class
 com\classcraft\demo\view\ContenidoDTO.class
 com\classcraft\demo\exception\UsuarioNoExisteException.class
 com\classcraft\demo\repository\MaestroRepository.class
 com\classcraft\demo\controller\MensajeriaController.class
+com\classcraft\demo\view\MisHijosDTO.class
 com\classcraft\demo\repository\PadreRepository.class
 com\classcraft\demo\controller\IncripcionController.class
 com\classcraft\demo\service\EstudianteService.class
@@ -56,6 +58,7 @@ com\classcraft\demo\view\LoginRequest.class
 com\classcraft\demo\controller\EstudianteController.class
 com\classcraft\demo\repository\ArchivoCSRepository.class
 com\classcraft\demo\exception\ContrasenaIncorrectaException.class
+com\classcraft\demo\controller\PadreController.class
 com\classcraft\demo\controller\CursoController.class
 com\classcraft\demo\service\MensajeriaService.class
 com\classcraft\demo\model\Actividad.class
