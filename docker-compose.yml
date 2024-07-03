@@ -42,7 +42,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - url.ms=http://34.212.187.105:8082
+      - url.ms=http://34.213.134.64:8082
     depends_on:
       - db
       - microservicio

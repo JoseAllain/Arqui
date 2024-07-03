@@ -1,9 +1,9 @@
-name: CI/CD Pipeline for Spring Boot Application on EC2 with Docker Compose
+name: Pipeline de CI/CD para Aplicación Spring Boot en EC2 con Docker Compose
 
 on:
   push:
     branches:
-      - main  # Asegúrate de que esto coincida con el nombre de tu rama principal
+      - main
   pull_request:
     branches:
       - main
